@@ -5,6 +5,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.awt.Desktop;
+import java.awt.desktop.*;
+import java.io.File;
 
 public class ExtractDataFromText implements OSymptomWriter {
 
@@ -62,6 +65,14 @@ public class ExtractDataFromText implements OSymptomWriter {
     public void extractData() {
         String results = countOccurences(uniqueList, fullList);
         generateOutputFile(results);
+        // Opens the file in the user's default text viewer
+        try {
+            File file = new File("result.out");
+            Desktop desktop = Desktop.getDesktop();
+            desktop.open(file);
+        } catch (Exception e) {
+            System.err.println("Error opening output file.");
+        }
     }
 
 }
