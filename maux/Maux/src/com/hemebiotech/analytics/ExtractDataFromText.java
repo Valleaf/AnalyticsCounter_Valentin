@@ -28,7 +28,10 @@ public class ExtractDataFromText implements OSymptomWriter {
 
         if (!symptomList.isEmpty() && !listToCount.isEmpty()) {
             List<String> result = new ArrayList<>();
-
+            // Using the symptomList, we count the number of times this string is found in
+            // the listToCount via a forEach. We extract this in a string, adding one line
+            // per symptom. Each line follows the format "Symptom name : NumberofTimesFound"
+            // e.g. "Headache : 5".
             symptomList.stream().forEach(uniqueSymptom -> result
                     .add(uniqueSymptom + " : " + Collections.frequency(listToCount, uniqueSymptom) + "\n"));
 
