@@ -13,8 +13,7 @@ public class ExtractDataFromText implements OSymptomWriter {
 
     /**
      * 
-     * @param uniqueList List containing symptoms to look for and count. Contains no
-     *                   duplicates
+     * @param Map containing the symptoms and occurences.
      */
     public ExtractDataFromText(Map<String, Integer> sortedSymptomsAndOccurences) {
         this.sortedSymptomsAndOccurences = sortedSymptomsAndOccurences;

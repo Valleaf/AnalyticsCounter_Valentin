@@ -49,12 +49,15 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 
 	@Override
 	public TreeMap<String, Integer> getUniqueSymptomNames(List<String> symptoms) {
-		// Converting a List to a Set will remove all duplicates. We then use
-		// Collections to sort the list alphabetically
+		// Converting a List to a HashMap will remove all duplicates and allow us to
+		// count the number of elements.
 		HashMap<String, Integer> symptomsAndOccurences = new HashMap<>();
 		for (String symptom : symptoms) {
 			symptomsAndOccurences.put(symptom, Collections.frequency(symptoms, symptom));
 		}
+
+		// Converting the results to a TreeMap will automatically sort the elements
+		// alphabetically.
 		TreeMap<String, Integer> sortedSymptoms = new TreeMap<>();
 		sortedSymptoms.putAll(symptomsAndOccurences);
 		return sortedSymptoms;

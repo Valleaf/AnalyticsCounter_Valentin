@@ -11,8 +11,8 @@ public interface OSymptomWriter {
     /**
      * If there is no data, will alert the user.
      * 
-     * @param text Extracts the text result of the occurences of each symptom into
-     *             an .out file
+     * @param Map Extracts the text result of the symptoms and occurences into an
+     *            .out file
      */
     boolean generateOutputFile(Map<String, Integer> sortedSymptomsAndOccurences);
 

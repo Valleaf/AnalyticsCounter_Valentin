@@ -26,7 +26,8 @@ public interface ISymptomReader {
 	 * 
 	 * @param list A list of all symptoms read from the files, possibly containing
 	 *             duplicates
-	 * @return a list of all the symptoms from the list with no duplicates
+	 * @return A Map of all symptoms read from the files and the number of times
+	 *         they occur.
 	 */
 	TreeMap<String, Integer> getUniqueSymptomNames(List<String> list);
 }

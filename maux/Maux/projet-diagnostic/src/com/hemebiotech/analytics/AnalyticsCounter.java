@@ -22,7 +22,7 @@ public class AnalyticsCounter {
         // Get the different symptoms by removing the duplicates
         TreeMap<String, Integer> sortedSymptomsAndOccurences = rSymptomDataFromFile.getUniqueSymptomNames(list);
 
-        // Count the occurences of each symptom and output the results in a file
+        // Output the results in a file
         ExtractDataFromText extractor = new ExtractDataFromText(sortedSymptomsAndOccurences);
         extractor.extractData();
 
