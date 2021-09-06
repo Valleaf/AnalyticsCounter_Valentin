@@ -13,7 +13,7 @@ import java.util.TreeMap;
  */
 public interface ISymptomReader {
 	/**
-	 * If no data is available, return an empty List
+	 * If no data is available, return an empty List.
 	 * 
 	 * @return a raw listing of all Symptoms obtained from a data source, duplicates
 	 *         are possible/probable
@@ -21,8 +21,7 @@ public interface ISymptomReader {
 	List<String> getSymptoms();
 
 	/**
-	 * This mnethod filters the duplicates and returns in a list all the symptoms
-	 * read from the source. if there is no data, returns an empty list.
+	 * If there is no data, will return an empty Map.
 	 * 
 	 * @param list A list of all symptoms read from the files, possibly containing
 	 *             duplicates

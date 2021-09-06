@@ -3,8 +3,8 @@ package com.hemebiotech.analytics;
 import java.util.Map;
 
 /**
- * Anything that will extract data from text or Lists and will use that data to
- * output a result file after analysing the data
+ * Anything that will extract data from Maps and will use that data to output a
+ * result file after analysing the data
  */
 public interface OSymptomWriter {
 

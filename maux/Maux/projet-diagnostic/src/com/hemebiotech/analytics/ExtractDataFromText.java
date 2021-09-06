@@ -21,9 +21,15 @@ public class ExtractDataFromText implements OSymptomWriter {
 
     @Override
     public boolean generateOutputFile(Map<String, Integer> sortedSymptomsAndOccurences) {
+
+        // If file is empty, we just return an error and false.
         if (!sortedSymptomsAndOccurences.isEmpty()) {
+
             try (FileWriter writer = new FileWriter("result.out")) {
+
+                // We loop through the entries and write line by line the results.
                 for (Entry<String, Integer> line : sortedSymptomsAndOccurences.entrySet()) {
+
                     writer.write(line.getKey() + " : " + line.getValue() + "\n");
                 }
                 System.out.println("\nOutput file generated successfully.");
