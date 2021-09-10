@@ -11,7 +11,7 @@ public class AnalyticsCounter {
         Scanner scanner = new Scanner(System.in);
 
         // Asking the user for the filename containing the symptoms
-        System.out.println("Please enter the filsymptoms.txte name");
+        System.out.println("Please enter the file name");
         String filename = scanner.nextLine();
         scanner.close();
         ReadSymptomDataFromFile rSymptomDataFromFile = new ReadSymptomDataFromFile(filename);
