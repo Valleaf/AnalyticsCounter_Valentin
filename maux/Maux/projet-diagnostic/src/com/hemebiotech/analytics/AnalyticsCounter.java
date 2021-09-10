@@ -2,8 +2,9 @@ package com.hemebiotech.analytics;
 
 import java.util.List;
 import java.util.Scanner;
+import java.util.TreeMap;
 
-public class App {
+public class AnalyticsCounter {
 
     public static void main(String[] args) {
 
@@ -19,10 +20,10 @@ public class App {
         List<String> list = rSymptomDataFromFile.getSymptoms();
 
         // Get the different symptoms by removing the duplicates
-        List<String> uniqueList = rSymptomDataFromFile.getUniqueSymptomNames(list);
+        TreeMap<String, Integer> sortedSymptomsAndOccurences = rSymptomDataFromFile.getUniqueSymptomNames(list);
 
-        // Count the occurences of each symptom and output the results in a file
-        ExtractDataFromText extractor = new ExtractDataFromText(uniqueList, list);
+        // Output the results in a file
+        ExtractDataFromText extractor = new ExtractDataFromText(sortedSymptomsAndOccurences);
         extractor.extractData();
 
     }
