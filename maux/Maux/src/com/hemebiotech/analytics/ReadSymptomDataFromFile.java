@@ -5,9 +5,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.TreeMap;
+import java.util.Set;
+import java.util.HashSet;
 
 /**
  * Simple brute force implementation
@@ -48,19 +48,14 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 	}
 
 	@Override
-	public TreeMap<String, Integer> getUniqueSymptomNames(List<String> symptoms) {
-		// Converting a List to a HashMap will remove all duplicates and allow us to
-		// count the number of elements.
-		HashMap<String, Integer> symptomsAndOccurences = new HashMap<>();
-		for (String symptom : symptoms) {
-			symptomsAndOccurences.put(symptom, Collections.frequency(symptoms, symptom));
-		}
-
-		// Converting the results to a TreeMap will automatically sort the elements
-		// alphabetically.
-		TreeMap<String, Integer> sortedSymptoms = new TreeMap<>();
-		sortedSymptoms.putAll(symptomsAndOccurences);
-		return sortedSymptoms;
+	public List<String> getUniqueSymptomNames(List<String> symptoms) {
+		// Converting a List to a Set will remove all duplicates. We then use
+		// Collections to sort the list alphabetically
+		Set<String> set = new HashSet<>(symptoms);
+		List<String> uniqueSymptoms = new ArrayList<>();
+		uniqueSymptoms.addAll(set);
+		Collections.sort(uniqueSymptoms);
+		return uniqueSymptoms;
 	}
 
 }
