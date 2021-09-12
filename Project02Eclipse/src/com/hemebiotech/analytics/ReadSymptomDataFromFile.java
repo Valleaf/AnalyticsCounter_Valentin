@@ -47,6 +47,7 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 		return result;
 	}
 
+	// gfgdfgdfg
 	@Override
 	public TreeMap<String, Integer> getUniqueSymptomNames(List<String> symptoms) {
 		// Converting a List to a HashMap will remove all duplicates and allow us to
